@@ -13,6 +13,7 @@ def main():
         continue
       resultado = matematica(calculo)
       print(resultado)
+      
     except ValueError:
       print("Syntax Error")
     except ZeroDivisionError as e:
@@ -36,26 +37,41 @@ def load():
 
 def calc_help():
   helps: list[str] = ["Simbolos", "Formulas", "Calculadora", "Outro"]
+  matematica = {"trignometria": ["Seno", "Cosseno", "Tangente", "ArcSeno", "ArcCosseno", "Cotangente"],
+                "Equações" : ["Formula resolvente"]
+                }
   print("Escolhe o tipo de ajuda: ")
   for i in range(len(helps)):
     print(i+1, helps[i])
   while True:
     ajuda: str = input().capitalize()
-    if ajuda == "Simbolos":
+    if ajuda == "Simbolos" or ajuda == "1":
+      print("\nTodos os simbolos:\n")
+      print("O + representa adição")
+      print("O * representa multiplicação")
+      print("O - representa subtração")
+      print("A / representa divisão")
+      print("O ^ coloca o numero em expoente")
+      print("A # representa raiz quadrada")
       break
-    elif ajuda == "Formulas":
+    elif ajuda == "Formulas" or ajuda == "2":
+      print("Escolhe a area das formulas: ")
+
       break
-    elif ajuda == "Calculadora":
+    elif ajuda == "Calculadora" or ajuda == "3":
       break
-    elif ajuda == "Outro":
+    elif ajuda == "Outro" or ajuda == "4":
       break
     else:
       print("Não encontrei a tua ajuda, tenta denovo!")
 
 def matematica(n):
-  for operator in "+-*/^":
+  for operator in "+-*/^#":
         index = n.find(operator)
         if index != -1:
+            if operator == "#":
+               numero = n[index+1:]
+               return float(numero) ** 0.5 
             numero = n[:index]
             resto = n[index + 1:]
             
