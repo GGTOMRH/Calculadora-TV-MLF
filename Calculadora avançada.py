@@ -35,8 +35,22 @@ def load():
   print("Bem-vindo à TV-MLF :) ")
 
 def calc_help():
+  helps: list[str] = ["Simbolos", "Formulas", "Calculadora", "Outro"]
   print("Escolhe o tipo de ajuda: ")
-
+  for i in range(len(helps)):
+    print(i+1, helps[i])
+  while True:
+    ajuda: str = input().capitalize()
+    if ajuda == "Simbolos":
+      break
+    elif ajuda == "Formulas":
+      break
+    elif ajuda == "Calculadora":
+      break
+    elif ajuda == "Outro":
+      break
+    else:
+      print("Não encontrei a tua ajuda, tenta denovo!")
 
 def matematica(n):
   for operator in "+-*/^":
