@@ -1,5 +1,7 @@
 import time
 import random
+from load import load
+from calchelp import calc_help
 
 def main():
   load()
@@ -18,50 +20,6 @@ def main():
       print("Syntax Error")
     except ZeroDivisionError as e:
           print(e)
-
-def load():
-  print("A inciar calculadora TV-MLF")
-  time.sleep(0.5)
-  load = 0
-  while load < 100:
-    if load > 95:
-      load += 1
-    elif load > 90:
-      load += random.randint(1, 5)
-    else:
-      load += random.randint(5, 10)
-    print("loading", str(load)+"%")
-    time.sleep(0.1)
-  time.sleep(0.5)
-  print("Bem-vindo à TV-MLF :)\nPowered by Cortex Corporation")
-
-def calc_help():
-  helps: list[str] = ["Simbolos", "Formulas", "Calculadora", "Outro"]
-  print("Escolhe o tipo de ajuda: ")
-  for i in range(len(helps)):
-    print(i+1, helps[i])
-  while True:
-    ajuda: str = input().capitalize()
-    if ajuda == "Simbolos" or ajuda == "1":
-      print("\nTodos os simbolos:\n")
-      print("O + representa adição")
-      print("O * representa multiplicação")
-      print("O - representa subtração")
-      print("A / representa divisão")
-      print("O ^ coloca o numero em expoente")
-      print("A # representa raiz quadrada")
-      break
-    elif ajuda == "Formulas" or ajuda == "2":
-      print("Escolhe a area das formulas: ")
-      #formulas()
-      break
-    elif ajuda == "Calculadora" or ajuda == "3":
-      break
-    elif ajuda == "Outro" or ajuda == "4":
-      print("\nNão sabemos como ajudá-lo! \nQualquer questão entre em contacto através do nosso email:\ncortexcorporationpt@gmail.com\n")
-      break
-    else:
-      print("Não encontrei a tua ajuda, tenta denovo!")
 
 def matematica(n):
   for operator in "+-*/^#":
