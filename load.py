@@ -14,4 +14,6 @@ def load():
     print("loading", str(load)+"%")
     time.sleep(0.1)
   time.sleep(0.5)
-  print("Bem-vindo à TV-MLF :)\nPowered by Cortex Corporation")
+  print("Powered by Cortex Corporation")
+  time.sleep(0.5)
+  print("Bem-vindo à TV-MLF :)")
