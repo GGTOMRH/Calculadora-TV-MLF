@@ -5,7 +5,7 @@ def formulas():
     areas = ["Matemática", "Fisica", "Quimica"]
 
     materias = {
-        "Matemática": ["Trignometria", "Geometria", ],
+        "Matemática": ["Trignometria", "Geometria","Algebra"],
         "Fisica": ["Mecanica", "Energia", "Ondas e eletromagnetismo"],
         "Quimica": ["Quantidades", "Soluções"]
         }
@@ -89,6 +89,3 @@ def formulas():
             break
         else:
             print("Não encontrei essa area! Tenta denovo!")
-
-if __name__ == "__main__":
-  formulas()
