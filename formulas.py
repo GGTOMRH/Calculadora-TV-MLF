@@ -5,14 +5,18 @@ def formulas():
     areas = ["Matemática", "Fisica", "Quimica"]
 
     materias = {
-        "Matemática": ["Trignometria", "Geometria","Algebra"],
+        "Matemática": ["Trignometria", "Geometria", "Algebra", "Areas", "Volumes", "Vetores"],
         "Fisica": ["Mecanica", "Energia", "Ondas e eletromagnetismo"],
         "Quimica": ["Quantidades", "Soluções"]
         }
     
     formulas = {
-        "Trignometria": ["Seno", "Cosseno", "Tangente"],
-        "Geometria": ["Teorema de Pitagoras"],
+        "Trignometria": ["Seno", "Cosseno", "Tangente", "Formulas Fundamentais"],
+        "Geometria": ["Teorema de Pitagoras", "Distancia entre dois pontos"],
+        "Algebra": ["Formula Resolvente", "Casos notáveis"],
+        "Areas": ...,
+        "Volumes": ...,
+        "Vetores": ...,
         "Mecanica": ...,
         "Energia": ... ,
         "Ondas e eletromagnetismo": ...,
@@ -47,6 +51,11 @@ def formulas():
                         elif escolha3 == "3" or escolha3 == "Tangente":
                             c.tangente()
                             break
+                        elif escolha3 == "4" or escolha3 == "Formulas Fundamentais":
+                            c.formulas_fundamentais()
+                            break
+                        else:
+                            print("Não encontrei essa formulas! Tenta denovo.")
                     break
                 elif escolha2 == "2" or escolha2 == materias["Matemática"][1]:
                     print("gd")
@@ -89,3 +98,6 @@ def formulas():
             break
         else:
             print("Não encontrei essa area! Tenta denovo!")
+
+if __name__ == "__main__":
+  formulas()
