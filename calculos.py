@@ -5,17 +5,6 @@ pi = m.pi
 formulasFundamentais = ["Seno", "Cosseno", "Tangente"]
 
 
-def teorema_de_pitagoras():
-  x = input("Primeiro cateto: ")
-  y = input("Segundo cateto: ")
-  h = (float(x) ** 2 + float(y) ** 2) ** 0.5
-  print(f"A hipotenusa é {h}")import math as m
-
-pi = m.pi
-
-formulasFundamentais = ["Seno", "Cosseno", "Tangente"]
-
-
 #GEOMETRIA
 
 def teorema_de_pitagoras():
@@ -276,9 +265,89 @@ def angulo_vetor():
   angulo = m.degrees(m.acos(cos))
   print(f"O angulo entre os dois vetores é {angulo} em graus")
 
+#FISICA
+
+#MOVIMENTO
+
+def trabalho():
+  f = input("Qual é a componente escalar da força?:")
+  d = input("Qual é a distância?:")
+  alpha = input("Qual é o angulo entre a força e o deslocamento?(em graus):")
+  cos = m.cos(m.radians(float(alpha)))
+  w = float(f) * float(d) * round(cos, 4)
+  print(f"O trabalho da força é {w}")
+
+def equacoes_movimento():
+  print("Escolhe a equação:\n1. Equação do movimento\n2. Equação da velocidade")
+
+  while True:
+    equac = input()
+    if equac == "1" or equac == "Equação do movimento":
+      x0 = input("Qual é a posição inicial?(m):")
+      v0 = input("Qual é a velocidade inicial?(m/s):")
+      a = input("Qual é a aceleração?(m/s^2):")
+      t = input("Qual é o tempo?(s):")
+
+      x = float(x0) + float(v0) * float(t) + 0.5 * float(a) * (float(t) ** 2)
+
+      print(f"A posição final é {x}")
+      break
+    elif equac == "2" or equac == "Equação da velocidade":
+      v0 = input("Qual é a velocidade inicial?(m/s):")
+      a = input("Qual é a aceleração?(m/s^2):")
+      t = input("Qual é o tempo?(s):")
+
+      v = float(v0) + float(a) * float(t)
+
+      print(f"A velocidade final é {v}")
+      break
+    else:
+      print("Não encontrei essa equação! Tenta denovo.")
 
 
+#Movimento circular uniforme
 
+def aceleracao_centripta():
+  print("Qual formula preferes usar:\n1. a = V^2/R\n2. a = w^2 * r")
+  while True:
+    escola = input()
+    if escola == "1" or escola == "a = V^2/R":
+      v = input("Qual é a velocidade?:")
+      r = input("Qual é o raio?:")
+      a = (float(v) ** 2) / float(r)
+      break
+    elif escola == "2" or escola == "a = w^2 * r":
+      w = input("Qual é a velocidade angular?:")
+      r = input("Qual é o raio?:")
+      a = (float(w) ** 2) * float(r)
+      break
+    else:
+      print("Não encontrei essa opção! Tenta denovo.")
+  print(f"A aceleração centrípta é {a}")
+
+
+def velocidade_circulo():
+  print("Escolhe qual valor usar:\n1. Velocidade angular\n2. Frequência\n3. Período")
+  while True:
+    escolha666 = input()
+    if escolha666 == "1" or escolha666 == "Velocidade angular":
+      w = input("Qual é a velocidade angular?:")
+      r = input("Qual é o raio?:")
+      v = float(w) * float(r)
+      break
+    elif escolha666 == "2" or escolha666 == "Frequencia":
+      f = input("Qual é a frequência?:")
+      r = input("Qual é o raio?:")
+      v = 2 * m.pi * float(f) * float(r)
+      break
+    elif escolha666 == "3" or escolha666 == "Periodo":
+      t = input("Qual é o período?:")
+      r = input("Qual é o raio?:")
+      v = ((2 * m.pi) / float(t)) * float(r)
+      break
+    else:
+      print("Não encontrei essa opção! Tenta denovo.")
+  print(f"A velocidade linear é {v}")
 
 
 def frequencia():
@@ -286,10 +355,12 @@ def frequencia():
   f = 1 / float(x)
   print(f"A frequencia é {f}")
 
+
 def periodo():
   x = input("Qual é a frequencia?")
   t = 1 / float(x)
   print(f"O periodo é {t}")
+
 
 def velocidade_angular():
   while True:
@@ -303,8 +374,9 @@ def velocidade_angular():
       w = 2 * pi / float(t)
       break
     else:
-      print("Syntax Error. Tenta denovo")
+      print("Não encontrei essa opção! Tenta denovo.")
   print(f"A velocidade angular é {w}")
+
 
 def velocidade_onda():
   while True:
