@@ -2,12 +2,8 @@ import calculos as c
 
 def formulas():
 
-    areas = ["Matemática", "Fisica", "Quimica"]
-
     materias = {
         "Matemática": ["Trignometria", "Geometria", "Algebra", "Áreas", "Volumes", "Vetores"],
-        "Fisica": ["Mecanica", "Energia", "Ondas e eletromagnetismo"],
-        "Quimica": ["Quantidades", "Soluções"]
         }
     
     formulas = {
@@ -16,26 +12,15 @@ def formulas():
         "Algebra": ["Formula Resolvente", "Casos notáveis"],
         "Areas": ["Quadrado", "Retângulo", "Triangulo", "Losango", "Trapezio", "Circulo"],
         "Volumes": ["Cubo", "Paralelepípedo", "Prisma Regular","Pirâmide", "Cilindro", "Cone", "Esfera"],
-        "Vetores": ["Diferença de dois pontos", "Norma", "Produto Escalar", "Angulo entre dois vetores"],
-
-        "Mecanica": ...,
-        "Energia": ... ,
-        "Ondas e eletromagnetismo": ...,
-        "Quantidades": ...,
-        "Soluções": ...
+        "Vetores": ["Diferença de dois pontos", "Norma", "Produto Escalar", "Angulo entre dois vetores"]
                 }
 
-    print("Escolhe uma area: ")
-    for i,area in enumerate(areas, start=1):
-        print(f"{i}. {area}")
 
+    print("Escolhe uma matéria:")
+    
+    for i,materia in enumerate(materias["Matemática"], start=1):
+            print(f"{i}. {materia}")
     while True:
-        escolha = input()[0].capitalize()
-        if escolha == "1" or escolha == "M":
-            print("Escolhe uma matéria:")
-            for i,materia in enumerate(materias["Matemática"], start=1):
-                print(f"{i}. {materia}")
-            while True:
                 escolha2 = input()
                 if escolha2 == "1" or escolha2 == materias["Matemática"][0]:
                     print("Escolhe uma formula:")
@@ -183,42 +168,3 @@ def formulas():
                     break
                 else:
                     print("Não encontrei essa matéria! Tenta denovo")
-            break
-        elif escolha == "2" or escolha == "F":
-            print("Escolhe uma matéria:")
-            for i,materia in enumerate(materias["Fisica"], start=1):
-                print(f"{i}. {materia}")
-            while True:
-                escolha2 = input()
-                if escolha2 == "1" or escolha2 == materias["Fisica"][0]:
-                    print("mecanica")
-                    break
-                elif escolha2 == "2" or escolha2 == materias["Fisica"][1]:
-                    print("emnergia")
-                    break
-                elif escolha2 == "3" or escolha2 == materias["Fisica"][1]:
-                    print("ondas")
-                    break
-                else:
-                    print("Não encontrei essa matéria! Tenta denovo")
-            break
-        elif escolha == "3" or escolha == "Q":
-            print("Escolhe uma matéria:")
-            for i,materia in enumerate(materias["Quimica"], start=1):
-                print(f"{i}. {materia}")
-            while True:
-                escolha2 = input()
-                if escolha2 == "1" or escolha2 == materias["Fisica"][0]:
-                    print("quantidades")
-                    break
-                elif escolha2 == "2" or escolha2 == materias["Fisica"][1]:
-                    print("solucoes")
-                    break
-                else:
-                    print("Não encontrei essa matéria! Tenta denovo")
-            break
-        else:
-            print("Não encontrei essa area! Tenta denovo!")
-
-if __name__ == "__main__":
-  formulas()
